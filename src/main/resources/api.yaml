@@ -1,0 +1,76 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "Post Meridiem Swagger API"
+  description: Defines Swagger API Documentation for sample Products.
+  license:
+    name: MIT
+    url: https://github.com/apiaryio/polls-api/blob/master/LICENSE
+host: polls.apiblueprint.org
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /products:
+    x-summary: Product Collection
+    get:
+      summary: List All Products
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+          examples:
+            application/json:
+              - product_id: 100
+                product_name: Sample Product
+
+    post:
+      description: >-
+        You may create your own product using this action. It takes a JSON
+        object containing a product.
+      summary: Create a New Product
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ProductRequest'
+      responses:
+        201:
+          description: ''
+          schema:
+            $ref: '#/definitions/Product'
+          examples:
+            application/json:
+              product_id: 100
+              product_name: New Product
+definitions:
+  Product:
+    title: Product
+    type: object
+    properties:
+      product_id:
+        type: string
+      product_name:
+        type: string
+  ProductRequest:
+    title: Product Request
+    type: object
+    properties:
+      product_id:
+        type: string
+      product_name:
+        type: string
+    required:
+      - product_id
+      - product_name
+    example:
+      product_id: 101
+      product_name: Old Product

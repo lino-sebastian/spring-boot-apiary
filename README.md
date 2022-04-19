@@ -1,25 +1,21 @@
 # spring-boot-apiary
-Spring Boot demo project utilizing [Apiary](https://apiary.io/) documentations with [Feign Client](https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html)
+Spring Boot demo project utilizing [Apiary](https://apiary.io/) API documentations using Swagger.
+Apiary supports Swagger as the API Description format.
+Swagger is an alternative format to API Blueprint for describing our API that we can use in Apiary
 
-## Apiary
-Oracle API Platform Cloud Service integrates with Oracle Apiary to provide API design and documentation features.
+## Swagger
+Swagger is an Interface Description Language for describing RESTful APIs expressed using JSON. 
 
-Oracle Apiary provides you with the ability to design APIs using either API Blueprint or Swagger 2.0. From these description files, Oracle Apiary generates interactive documentation and a console for making calls to the APIs from the UI.
-
-Oracle Apiary also instantiates a mock service that you can use to interact with the examples provided in the specification file. API Managers can link APIs they have on Oracle Apiary to display interactive documentation, a test console, and mock service details on an API’s page in the Developer Portal.
-
-## Feign Client
-Feign is a declarative web service client. It makes writing web service clients easier. 
-
-To use Feign create an interface and annotate it. It has pluggable annotation support including Feign annotations and JAX-RS annotations. Feign also supports pluggable encoders and decoders. 
-
-Spring Cloud adds support for Spring MVC annotations and for using the same HttpMessageConverters used by default in Spring Web. Spring Cloud integrates Ribbon and Eureka to provide a load balanced http client when using Feign.
+Swagger is used together with a set of open-source software tools to design, build, document, and use RESTful web services.
 
 ## What have been done
-1. Constructed basic Spring boot app using [Spring Initializer](https://start.spring.io/)
-2. Added [Feign Client dependency](https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign)
-3. Constructed sample API documentation using [Apiary](https://apiary.io/)
-4. Implemented Mappings consuming from Apiary mock server using Feign Client
+1. Constructed basic Spring boot project using [Spring Initializer](https://start.spring.io/)
+2. Added required dependencies for Swagger
+3. Added required plugin configuration for generating Swagger API and Models
+4. Constructed Swagger API documentation as per this [guidelines](https://help.apiary.io/api_101/swagger-tutorial/)
+5. Downloaded the created [Swagger Documentation](https://postmeridiemswaggerapi.docs.apiary.io/#)
+6. Added the yaml config in classpath
+7. Generated Swagger API and Models on **Build**
 
 ## Build 
 ```
@@ -33,4 +29,5 @@ mvn spring-boot:run
 
 ## Tools Used
 - Apiary : https://linosebastian.docs.apiary.io/
+- Swagger Apiary : https://help.apiary.io/swagger/
 - Spring Initializer : https://start.spring.io/
